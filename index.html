@@ -19,6 +19,10 @@
     <!-- tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <style>
         * {
             font-family: "Geist", sans-serif;
@@ -28,31 +32,34 @@
 
 <body>
     <!-- dashbord -->
-    <header>
-        <div>
-            <h1>Job Application Tracker</h1>
-        </div>
-        <div>
-            <div>
-                <p>Total</p>
-                <p>8</p>
+    <header class="container w-[90%] mx-auto space-y-3">
+        <h1 class="text-2xl font-extrabold">Job Application Tracker</h1>
+        <div class="grid grid-cols-3 gap-8 ">
+            <div class="bg-base-200 shadow-md p-5 rounded-md">
+                <p class="font-semibold">Total</p>
+                <p class="text-xl font-semibold">8</p>
             </div>
-            <div>
-                <p>Interview</p>
-                <p>0</p>
+            <div class="bg-base-200 shadow-md rounded-md p-5">
+                <p class="font-semibold">Interview</p>
+                <p class="text-xl font-semibold text-green-500">0</p>
             </div>
-            <div>
-                <p>Rejected</p>
-                <p>0</p>
+            <div class="bg-base-200 shadow-md rounded-md p-5">
+                <p class="font-semibold">Rejected</p>
+                <p class="text-xl font-semibold text-red-500">0</p>
             </div>
         </div>
     </header>
-    <hr>
+    <hr class="border-gray-200 border-1 my-4">
     <main>
         <!-- button section -->
         <section>
             <div>
-                <p>Available Jobs</p>
+                <div>
+                    <p>Available Jobs</p>
+                </div>
+                <div>
+                    <p>8 jobs</p>
+                </div>
             </div>
             <div>
                 <button>All</button>
