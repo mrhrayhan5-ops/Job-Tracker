@@ -37,15 +37,15 @@
         <div class="grid grid-cols-3 gap-8 ">
             <div class="bg-base-200 shadow-md p-5 rounded-md">
                 <p class="font-semibold">Total</p>
-                <p class="text-xl font-semibold">8</p>
+                <p id="total" class="text-xl font-semibold">0</p>
             </div>
             <div class="bg-base-200 shadow-md rounded-md p-5">
                 <p class="font-semibold">Interview</p>
-                <p class="text-xl font-semibold text-green-500">0</p>
+                <p id="interview" class="text-xl font-semibold text-green-500">0</p>
             </div>
             <div class="bg-base-200 shadow-md rounded-md p-5">
                 <p class="font-semibold">Rejected</p>
-                <p class="text-xl font-semibold text-red-500">0</p>
+                <p id="rejected" class="text-xl font-semibold text-red-500">0</p>
             </div>
         </div>
     </header>
@@ -62,13 +62,13 @@
                 </div>
             </div>
             <div class="flex gap-5">
-                <button class="bg-blue-400 shadow-md  py-2 px-1 rounded-sm w-[80px]">All</button>
-                <button class="bg-base-200 shadow-md py-2 px-1 rounded-sm w-[80px]">Interview</button>
-                <button class="bg-base-200 shadow-md py-2 px-1 rounded-sm w-[80px]">Rejected</button>
+                <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="btn bg-blue-400 shadow-md  py-2 px-1 rounded-sm w-[80px]">All</button>
+                <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn" class="btn bg-base-200 shadow-md py-2 px-1 rounded-sm w-[80px]">Interview</button>
+                <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn" class="btn bg-base-200 shadow-md py-2 px-1 rounded-sm w-[80px]">Rejected</button>
             </div>
         </section>
         <!-- job-card section -->
-        <section class="space-y-6">
+        <section id="all-card" class="space-y-6">
             <!-- card-1 -->
             <div class="shadow-lg p-6 rounded-sm">
                 <div class="flex justify-between">
@@ -292,7 +292,6 @@
             </div>
         </section>
     </main>
-
     <script src="script/script.js"></script>
 </body>
 
