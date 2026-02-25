@@ -58,7 +58,7 @@
                     <p class="text-xl font-medium">Available Jobs</p>
                 </div>
                 <div>
-                    <p class="text-gray-500">8 jobs</p>
+                    <p class="text-gray-500"><span id="count">0</span> jobs</p>
                 </div>
             </div>
             <div class="flex gap-5">
@@ -71,7 +71,7 @@
             </div>
         </section>
         <!-- filters section -->
-        <section id="filtered-section">
+        <section id="filtered-section" class="hidden">
 
         </section>
         <!-- job-card section -->
@@ -96,10 +96,10 @@
                         users worldwide.</P>
                 </div>
                 <div class="mt-5 flex gap-6">
-                    <button id="interview"
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button id="rejected"
-                        class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                    <button
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-2 -->
@@ -127,8 +127,9 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-3 -->
@@ -157,8 +158,9 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-4 -->
@@ -186,8 +188,9 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-5 -->
@@ -215,8 +218,9 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-6 -->
@@ -244,8 +248,9 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-7 -->
@@ -273,8 +278,9 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
             <!-- card-8 -->
@@ -302,18 +308,14 @@
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
-                        class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
-                    <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
+                        class="btn interview-btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
+                    <button
+                        class="btn rejected-btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>
             </div>
         </section>
     </main>
-    <div id="no-contant"
-        class="w-95% bg-base-200 rounded-sm h-[80vh] flex flex-col items-center justify-center gap-2">
-        <img src="assets/assignment_7959593 1.png" alt="">
-        <h2 class="text-2xl font-bold">No jobs available</h2>
-        <p class="text-gray-500">Check back soon for new job opportunities</p>
-    </div>
+
     <script src="script/script.js"></script>
     <!-- <script src="script/copy.js"></script> -->
 </body>

@@ -1,10 +1,11 @@
 let interviewList = [];
 let rejectedList = [];
-let currentStatus = "allx`"
+let currentStatus = "all"
 
 let totalCount = document.getElementById("total-count");
 let interviewCount = document.getElementById("interview-count");
 let rejectedCount = document.getElementById("rejected-count");
+let count = document.getElementById('count');
 
 const allFilterBtn = document.getElementById("all-filter-btn");
 const interviewFilterBtn = document.getElementById("interview-filter-btn");
@@ -18,6 +19,7 @@ const noContant = document.getElementById("no-contant");
 
 function cardCount() {
     totalCount.innerText = allCardSection.children.length;
+    count.innerText = allCardSection.children.length;
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
 }
@@ -43,18 +45,20 @@ function toggleStyle(id) {
     } else if (id == 'all-filter-btn') {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden');
-    } else if (id == 'rejected-filter-btn') {
+    }else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden');
         renderRejected()
     }
 }
 
-allCardSection.addEventListener("click", function (event) {
-    
-    console.log(event.target.classList.contains("interview"))
+mainContainer.addEventListener("click", function (event) {
 
-    if (event.target.classList.contains("interview")) {
+    // console.log(event.target.parentNode.parentNode);
+    console.log(event.target.classList.contains("interview-btn"));
+
+
+    if (event.target.classList.contains("interview-btn")) {
         const parentNode = event.target.parentNode.parentNode;
 
         const companyName = parentNode.querySelector(".company-name").innerText
@@ -63,14 +67,20 @@ allCardSection.addEventListener("click", function (event) {
         const jobStatus = parentNode.querySelector(".job-status").innerText
         const jobDescription = parentNode.querySelector(".job-description").innerText
 
+        parentNode.querySelector(".job-status").innerText = "Interview";
+
         const cardInfo = {
             companyName,
             jobPosition,
             jobDetail,
-            jobStatus,
+            jobStatus : "Interview",
             jobDescription,
         }
+
         const interviewExist = interviewList.find(item => item.companyName == cardInfo.companyName);
+
+        
+
         if (!interviewExist) {
             interviewList.push(cardInfo);
         }
@@ -78,35 +88,39 @@ allCardSection.addEventListener("click", function (event) {
     }
 })
 
-
 function renderInterview() {
-    filterSection.innerHTML = ""
+    filterSection.innerHTML = `<div id="no-contant"
+                class="w-95% bg-base-200 rounded-sm h-[80vh] flex flex-col items-center justify-center gap-2">
+                <img src="assets/assignment_7959593 1.png" alt="">
+                <h2 class="text-2xl font-bold">No jobs available</h2>
+                <p class="text-gray-500">Check back soon for new job opportunities</p>
+            </div>`
     for (let interview of interviewList) {
         console.log(interview);
+
         let div = document.createElement("div");
         div.className = "shadow-lg p-6 rounded-sm"
         div.innerHTML = `
         <div class="flex justify-between">
                     <div>
-                        <h2 class="company-name text-2xl font-semibold mb-1">Mobile First Corp</h2>
-                        <p class="job-position text-gray-600 font-medium mb-3">React Native Developer</p>
+                        <h2 class="company-name text-2xl font-semibold mb-1">${interview.companyName}</h2>
+                        <p class="job-position text-gray-600 font-medium mb-3">${interview.jobPosition}</p>
                     </div>
                     <div class="border border-gray-300 rounded-full btn">
                         <button class="delate-btn"><i class="fa-regular fa-trash-can"></i></button>
                     </div>
                 </div>
 
-                <p class="job-detail text-[15px] mb-4">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="job-detail text-[15px] mb-4">${interview.jobDetail}</p>
                 <div>
-                    <p class="job-status mb-3 bg-blue-200 w-[100px] rounded-sm py-2 text-center">Not Applied</p>
-                    <P class="job-description">Build cross-platform mobile applications using React Native. Work on
-                        products used by millions of
-                        users worldwide.</P>
+                    <p class="job-status mb-3 bg-blue-200 w-[100px] rounded-sm py-2 text-center">${interview.jobStatus}</p>
+                    <P class="job-description">${interview.jobDescription}</P>
                 </div>
                 <div class="mt-5 flex gap-6">
                     <button
                         class="btn border-2 border-green-500 rounded-sm text-green-500 font-semibold">INTERVIEW</button>
                     <button class="btn border-2 border-red-500 rounded-sm text-red-500 font-semibold">REJECTED</button>
                 </div>`
+        filterSection.appendChild(div);
     }
 }
